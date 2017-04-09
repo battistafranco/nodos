@@ -11,7 +11,7 @@ export interface Node {
     enabled_read_eeprom :boolean;
     buffer :number;
     enabled_read_node :boolean;
-    time : string;//1490740101.2242255;
+    time : string;
     fnapp : number;
     servicios : any;
     enabled_read_ram :boolean;
