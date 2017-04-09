@@ -1,0 +1,14 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title">Seleccion de Nodos</h2>
+  </div>
+  <div class="panel-body">
+  <div style="text-align: center">
+    <button type="button" class="btn" [ngClass]="(node.show)?'btn-success':'btn-default'" style="width: 80px; font-weight: bold" *ngFor="let node of nodes" (click)="monitorearNodo(node)"
+        [ngClass]="{'selected': node.show }">
+      {{node.lan_dir}}
+    </button>
+</div>
+  </div>
+</div>
+<my-nodes [nodes]="nodes"></my-nodes>

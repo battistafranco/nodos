@@ -1,0 +1,78 @@
+
+
+<!--<div>
+  <label>Nuevo Superhéroe:</label> <input #heroName />
+  <button (click)="add(heroName.value); heroName.value=''">
+    Agregar
+  </button>
+</div>-->
+<!--<div class="panel panel-info">
+  <div class="panel-heading">   
+    <h2 class="panel-title">Nodos Monitoreados</h2>
+  </div>
+  <div class="panel-body">
+    <div class="cards" >
+     <ng-container *ngFor="let node of nodes" >
+      <div *ngIf="node.show"    
+        (click)="gotoDetail(node)">
+        <span style="height: 100px; vertical-align: middle; text-align: center" class="badge">{{node.id}}</span> {{node.status}}
+      </div>
+      </ng-container>
+    </div>  
+  </div>
+</div>-->
+<script src="./cards.js"></script>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">   
+    <h2 class="panel-title">Nodos Monitoreados</h2>
+  </div>
+  <div class="panel-body">
+    <div class="view">
+      <div class="card__full">
+		<div class="card__full-top">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M16.59 8.59l-4.59 4.58-4.59-4.58-1.41 1.41 6 6 6-6z"/>
+					<path d="M0 0h24v24h-24z" fill="none"/>
+			</svg>
+			<span class="card__full-num"></span>
+		</div>
+		<div class="card__full-bottom">
+			<p class="card__full-handle"></p>
+			<p class="card__full-info"></p>
+		</div>
+	</div>
+	<div class="card__list">
+    <ng-container *ngFor="let node of nodes" >
+      <div *ngIf="node.show" (click)="gotoDetail(node)" [ngClass]="(node.status)?'card__item card__item--green':'card__item card__item--tam'" class="card__item card__item--blue">
+        <div class="card__info">
+          <div class="info-player">
+            <p class="info-player__num">{{node.id}}</p>
+            <p class="info-player__name"><small>Maestro</small><br>{{node.im_master | siNo  }}</p>
+            <!--<p class="info-player__name"><small>Status</small><br>{{node.status}}</p>-->
+          </div>
+          <div class="info-place">
+              <p class="info-player__name"><small>EEPROM</small><br>{{node.eeprom_size }}</p>
+          </div>
+        </div>
+      </div>
+		</ng-container>
+	</div>
+</div>
+  </div>
+</div>
+
+
+	
+
+<!--<a href="http://ettrics.com/code/mobile-material-design-cards/" class="logo" target="_blank">
+ <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/ettrics-logo.svg" alt="" /> 
+</a>-->
+
+    
+    <!--<div *ngIf="selectedNode">
+  <h2>
+    {{selectedNode.id}} ha sido seleccionado!
+  </h2>
+  <button (click)="gotoDetail(node)">Ver detalles</button>
+</div>  -->
